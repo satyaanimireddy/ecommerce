@@ -1,0 +1,65 @@
+backend:-
+project creation:-
+=>in terminal
+1.npm init -y
+2.npm i express cors jsonwebtoken nodemon mongoose express-router
+
+=>express  ->it will create (routes or  server) then we can create apis
+=>cors -it allows to browser to sever (between two servers)-frontend lo block chesina danini unblock cheyyadaniki cors use chesthamu(to unblock cors issue)
+=>jsonwebtoken-> for authorization(encode and decode)->to create authorization at backend
+=>nodemon->it will update automatically without run project everytime(hot module reload)
+=>mongoose->server to database intraction(to connect with mongodb,to intract model,to create schema),model creation ,schema creation
+
+after project creation:-
+
+1.first server creation :
+=>in index.js -> var express = require('express') - instead of this we will create module pattern-like   "type":"module", in package.json,then we cam use import
+2. "type":"module", in package json
+=>add in package.json inside "scripts"
+->1."start":"node index.js"  
+->2. "dev":"nodemon index.js"
+
+3.import express from 'express' in index.js
+4.import { PORT, dbURL } from "./config.js";
+5.import mongoose from "mongoose";
+
+6.let app = express()
+7.app.get("/", (req, res) => {
+  res.send("Hello I am from Server");
+});
+
+
+8.app.listen(PORT,()=>{
+        console.log('server started in port ${PORT}')
+
+})
+9.mongoose.connect(dbURL).then(()=>{
+        console.log('db connected')
+
+}).catch((error)=>{
+    console.log('error')
+})
+
+10.to stop server -> ctr+c -> y
+11.to run server ->npm run dev
+
+12.model -sever database tho interaction ayyi some operation cheyyadaniki(add,delete,update)
+13.schema-to structure ->it will be in model
+
+db creation:
+1.mongodb atlas
+2.try free ->signup and signin
+3.connect->compass->click->i have mongodb compass installed->(copy url and past it in config.js) ->close
+
+
+=>frontend:
+
+1.npx create-react-app .    (for same folder)
+2.npm i react-router-dom bootstrap redux react-redux axios
+=>axios-api calls
+=>redux-> to maintain global state
+=>react-redux ->to communicate react and redux
+
+
+react:-
+1.react uses virtual dom to effectively update or render data in ui. instead of directly manipulating the real dom.react calculates minimum set of 
